@@ -24,6 +24,13 @@ const TodoProvider = ({ children }) => {
     setTodos(updatedTodos);
   };
 
+  // 다크모드
+  const [darkMode, setDarkMode] = useState(false);
+  const handleDarkMode = () => {
+    setDarkMode(!darkMode);
+    updeteDarkMode(darkMode);
+  };
+
   return (
     <TodoContext.Provider value={{ todos, createTodo, deleteTodo, updateTodo }}>
       {children}
@@ -31,4 +38,13 @@ const TodoProvider = ({ children }) => {
   );
 };
 
+function updeteDarkMode(darkMode) {
+  if (darkMode) {
+    document.documentElement.classList.add("dark");
+    localStorage.theme = "dark";
+  } else {
+    document.documentElement.classList.remove("dark");
+    localStorage.theme = "light";
+  }
+}
 export { TodoContext, TodoProvider };
