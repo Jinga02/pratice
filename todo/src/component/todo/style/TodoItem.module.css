@@ -1,0 +1,8 @@
+.todoItemLi {
+  width: 90%;
+  padding: 10px 5%;
+  font-size: 25px;
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+}

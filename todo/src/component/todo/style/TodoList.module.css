@@ -1,0 +1,14 @@
+.TodoListWrapper {
+  width: 100%;
+  height: 90%;
+}
+
+.TodoUl {
+  width: 100%;
+  height: 90%;
+  padding: 0;
+  margin: 0;
+  flex: 1 1 auto;
+  overflow-y: scroll;
+  overflow-wrap: break-word;
+}
