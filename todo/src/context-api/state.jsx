@@ -34,15 +34,15 @@ const TodoProvider = ({ children }) => {
   };
 
   // 다크모드
-  const [darkMode, setDarkMode] = useState(false);
+  const [darkMode, setDarkMode] = useState(localStorage.getItem("theme"));
   const handleDarkMode = () => {
     setDarkMode(!darkMode);
     updeteDarkMode(darkMode);
-    console.log(darkMode);
   };
 
   useEffect(() => {
     saveTodosToLocalStorage(todos);
+    updeteDarkMode(darkMode);
   }, [todos]);
 
   return (
@@ -62,12 +62,12 @@ const TodoProvider = ({ children }) => {
 };
 
 function updeteDarkMode(darkMode) {
-  if (darkMode) {
+  if (darkMode === "dark") {
     document.documentElement.classList.add("dark");
-    localStorage.theme = "dark";
+    localStorage.setItem("theme", "dark");
   } else {
     document.documentElement.classList.remove("dark");
-    localStorage.theme = "light";
+    localStorage.setItem("theme", "light");
   }
 }
 
