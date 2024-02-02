@@ -1,6 +1,11 @@
-.Wrapper {
+.inpuWrapper {
+  height: 15%;
+  background-color: rgba(128, 128, 128, 0.156);
+}
+.form {
   display: flex;
   padding: 10px;
+  height: 70%;
 }
 
 .input {
@@ -8,18 +13,17 @@
   font-size: 1.4rem;
   padding: 5px 10px;
   border: none;
-  outline: none;
 }
 .button {
   cursor: pointer;
-  background-color: rgb(255, 166, 0);
+  background-color: var(--color-accent);
   font-size: 1.3rem;
   font-weight: bold;
   padding: 0 30px;
   border: none;
   border-top-right-radius: 8px;
   border-bottom-right-radius: 8px;
-  color: white;
+  color: var(--color-font);
 }
 
 .button:hover {

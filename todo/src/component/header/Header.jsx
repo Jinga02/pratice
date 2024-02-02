@@ -1,20 +1,20 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import style from "./style/Header.module.css";
 import { FiSun } from "react-icons/fi";
 import { LuMoon } from "react-icons/lu";
+import { TodoContext } from "../../context-api/state";
 
 const Header = ({ header, headers, setHeader }) => {
   const handleHeaderClick = (selectedHeader) => {
     setHeader(selectedHeader);
   };
-  const [selectMode, setSelectMode] = useState(false);
-  const handleDrakMode = () => {
-    setSelectMode(!selectMode);
-  };
+
+  const { darkMode, handleDarkMode } = useContext(TodoContext);
+  console.log(darkMode);
   return (
     <div className={style.HeaderWrapper}>
-      <button className={style.darkModeIcon} onClick={handleDrakMode}>
-        {selectMode ? <FiSun /> : <LuMoon />}
+      <button className={style.darkModeIcon} onClick={handleDarkMode}>
+        {darkMode ? <FiSun /> : <LuMoon />}
       </button>
 
       <ul className={style.HeaderUl}>

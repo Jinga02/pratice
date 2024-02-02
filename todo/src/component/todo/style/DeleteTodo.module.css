@@ -23,7 +23,7 @@
 }
 
 .DeleteButton:hover::before {
-  background-color: orange;
+  background-color: var(--color-accent);
 }
 
 .DeleteButton:hover {

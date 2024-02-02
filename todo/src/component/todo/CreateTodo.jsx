@@ -43,17 +43,19 @@ const CreateTodo = () => {
   // };
 
   return (
-    <form className={style.Wrapper} onSubmit={createTodo}>
-      <input
-        className={style.input}
-        type="text"
-        value={todoText}
-        onChange={handleChange}
-      />
-      <button className={style.button} onClick={handleCreateTodo}>
-        ADD
-      </button>
-    </form>
+    <div className={style.inpuWrapper}>
+      <form className={style.form} onSubmit={createTodo}>
+        <input
+          className={style.input}
+          type="text"
+          value={todoText}
+          onChange={handleChange}
+        />
+        <button className={style.button} onClick={handleCreateTodo}>
+          ADD
+        </button>
+      </form>
+    </div>
   );
 };
 

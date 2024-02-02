@@ -1,17 +1,17 @@
 .HeaderWrapper {
-  background-color: orange;
+  background-color: var(--color-accent);
   width: 100%;
   height: 10%;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-bottom: 1px solid rgba(160, 160, 160, 0.134);
+  border-bottom: 1px solid var(--color-border);
 }
 
 .darkModeIcon {
   background: transparent;
   border: 0;
-  color: white;
+  color: var(--color-font-accent);
   font-size: 25px;
   margin-left: 10px;
   cursor: pointer;
@@ -30,17 +30,19 @@
 .HeaderLi {
   cursor: pointer;
   margin: 0 15px;
-  font-size: 1.3rem;
-  color: rgba(255, 255, 255, 0.708);
+  font-size: 1.4rem;
+  color: var(--color-font);
   transition: all 150ms ease-out;
   padding: 10px;
+  font-weight: bold;
 }
 
 .HeaderLi:hover {
   transform: scale(1.3);
+  color: var(--color-font-accent);
 }
 
 .selected {
-  color: rgb(255, 255, 255);
+  color: var(--color-font-accent);
   font-weight: bold;
 }

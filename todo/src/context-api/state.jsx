@@ -29,10 +29,20 @@ const TodoProvider = ({ children }) => {
   const handleDarkMode = () => {
     setDarkMode(!darkMode);
     updeteDarkMode(darkMode);
+    console.log(darkMode);
   };
 
   return (
-    <TodoContext.Provider value={{ todos, createTodo, deleteTodo, updateTodo }}>
+    <TodoContext.Provider
+      value={{
+        todos,
+        createTodo,
+        deleteTodo,
+        updateTodo,
+        darkMode,
+        handleDarkMode,
+      }}
+    >
       {children}
     </TodoContext.Provider>
   );

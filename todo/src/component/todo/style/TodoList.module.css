@@ -1,6 +1,7 @@
 .TodoListWrapper {
   width: 100%;
   height: 90%;
+  background-color: var(--color-todo-bg);
 }
 
 .TodoUl {
