@@ -1,11 +1,11 @@
 .inpuWrapper {
   height: 15%;
-  background-color: rgba(128, 128, 128, 0.156);
+  background-color: var(--color-border);
 }
 .form {
   display: flex;
   padding: 10px;
-  height: 70%;
+  height: 65%;
 }
 
 .input {
@@ -23,7 +23,7 @@
   border: none;
   border-top-right-radius: 8px;
   border-bottom-right-radius: 8px;
-  color: var(--color-font);
+  color: var(--color-white);
 }
 
 .button:hover {

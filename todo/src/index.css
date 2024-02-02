@@ -1,29 +1,32 @@
 :root {
+  --color-white: white;
   --color-todo-bg: rgb(255, 255, 255);
+  --color-font: rgba(255, 255, 255, 0.8);
+  --color-font-accent: white;
+  --color-todo-font: black;
+  --color-accent: #f16e03;
+  --color-border: rgba(160, 160, 160, 0.2);
   --color-bg: linear-gradient(
     90deg,
     rgba(36, 17, 0, 1) 0%,
     rgba(241, 128, 15, 1) 0%,
     rgba(255, 171, 0, 1) 100%
   );
-  --color-font: rgba(255, 255, 255, 0.8);
-  --color-todo-font: black;
-  --color-font-accent: white;
-  --color-accent: #f16e03;
-  --color-border: rgba(160, 160, 160, 0.134);
 }
 
 html.dark {
   --color-todo-bg: rgba(255, 255, 255, 0);
-  --color-font-accent: orange;
+  --color-font: rgba(255, 255, 255, 0.8);
+  --color-font-accent: #f16e03;
   --color-todo-font: white;
+  --color-accent: #1a1c35;
+  --color-border: rgba(160, 160, 160, 0.1);
   --color-bg: linear-gradient(
     90deg,
     rgba(36, 17, 0, 1) 0%,
     rgba(4, 4, 34, 0.8491990546218487) 0%,
     rgba(8, 7, 34, 0.8828125) 100%
   );
-  --color-accent: #1a1c35;
 }
 
 body {
