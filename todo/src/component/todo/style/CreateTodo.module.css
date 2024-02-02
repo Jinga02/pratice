@@ -11,16 +11,15 @@
 .input {
   flex: 1 0 auto;
   font-size: 1.4rem;
-  padding: 5px 10px;
-  border: none;
+  padding: 10px 10px;
+  border: 0;
 }
 .button {
   cursor: pointer;
   background-color: var(--color-accent);
   font-size: 1.3rem;
-  font-weight: bold;
   padding: 0 30px;
-  border: none;
+  border: 0;
   border-top-right-radius: 8px;
   border-bottom-right-radius: 8px;
   color: var(--color-white);

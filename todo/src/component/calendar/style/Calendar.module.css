@@ -1,0 +1,13 @@
+.calendarWrapper {
+  position: fixed;
+  left: 50%;
+  top: 0;
+  transform: translate(-50%, 5%);
+  color: var(--color-font-accent);
+}
+
+.monthButton {
+}
+
+.dayButton {
+}

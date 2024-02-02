@@ -10,7 +10,7 @@ const Header = ({ header, headers, setHeader }) => {
   };
 
   const { darkMode, handleDarkMode } = useContext(TodoContext);
-  console.log(darkMode);
+
   return (
     <div className={style.HeaderWrapper}>
       <button className={style.darkModeIcon} onClick={handleDarkMode}>

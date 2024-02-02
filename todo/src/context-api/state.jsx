@@ -1,12 +1,16 @@
-import React, { createContext, useState } from "react";
+import React, { createContext, useEffect, useState } from "react";
 
 const TodoContext = createContext();
 
 const TodoProvider = ({ children }) => {
-  const [todos, setTodos] = useState([]);
+  const [todos, setTodos] = useState(() => {
+    const localStorageTodos = localStorage.getItem("todos");
+    return localStorageTodos ? JSON.parse(localStorageTodos) : [];
+  });
 
   const createTodo = (newTodo) => {
-    setTodos([...todos, newTodo]);
+    const updatedTodos = [...todos, newTodo];
+    setTodos(updatedTodos);
   };
 
   const deleteTodo = (deleteTodoId) => {
@@ -24,6 +28,11 @@ const TodoProvider = ({ children }) => {
     setTodos(updatedTodos);
   };
 
+  // todo 영구저장
+  const saveTodosToLocalStorage = (todos) => {
+    localStorage.setItem("todos", JSON.stringify(todos));
+  };
+
   // 다크모드
   const [darkMode, setDarkMode] = useState(false);
   const handleDarkMode = () => {
@@ -31,6 +40,10 @@ const TodoProvider = ({ children }) => {
     updeteDarkMode(darkMode);
     console.log(darkMode);
   };
+
+  useEffect(() => {
+    saveTodosToLocalStorage(todos);
+  }, [todos]);
 
   return (
     <TodoContext.Provider
@@ -57,4 +70,5 @@ function updeteDarkMode(darkMode) {
     localStorage.theme = "light";
   }
 }
+
 export { TodoContext, TodoProvider };
