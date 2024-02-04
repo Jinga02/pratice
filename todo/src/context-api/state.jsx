@@ -34,16 +34,31 @@ const TodoProvider = ({ children }) => {
   };
 
   // 다크모드
-  const [darkMode, setDarkMode] = useState(localStorage.getItem("theme"));
+  const updateDarkMode = (darkMode) => {
+    if (darkMode === true) {
+      document.documentElement.classList.add("dark");
+      localStorage.setItem("theme", true);
+    } else {
+      document.documentElement.classList.remove("dark");
+      localStorage.setItem("theme", false);
+    }
+  };
+
+  const [darkMode, setDarkMode] = useState(() => {
+    const localStorageTheme = localStorage.getItem("theme");
+    return localStorageTheme ? JSON.parse(localStorageTheme) : false;
+  });
+
   const handleDarkMode = () => {
-    setDarkMode(!darkMode);
-    updeteDarkMode(darkMode);
+    const newDarkMode = !darkMode;
+    setDarkMode(newDarkMode);
+    updateDarkMode(newDarkMode);
   };
 
   useEffect(() => {
     saveTodosToLocalStorage(todos);
-    updeteDarkMode(darkMode);
-  }, [todos]);
+    updateDarkMode(darkMode);
+  }, [todos, darkMode]);
 
   return (
     <TodoContext.Provider
@@ -60,15 +75,5 @@ const TodoProvider = ({ children }) => {
     </TodoContext.Provider>
   );
 };
-
-function updeteDarkMode(darkMode) {
-  if (darkMode === "dark") {
-    document.documentElement.classList.add("dark");
-    localStorage.setItem("theme", "dark");
-  } else {
-    document.documentElement.classList.remove("dark");
-    localStorage.setItem("theme", "light");
-  }
-}
 
 export { TodoContext, TodoProvider };

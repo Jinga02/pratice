@@ -14,7 +14,7 @@ const Header = ({ header, headers, setHeader }) => {
   return (
     <div className={style.HeaderWrapper}>
       <button className={style.darkModeIcon} onClick={handleDarkMode}>
-        {darkMode === "dark" ? <LuMoon /> : <FiSun />}
+        {darkMode ? <LuMoon /> : <FiSun />}
       </button>
 
       <ul className={style.HeaderUl}>
