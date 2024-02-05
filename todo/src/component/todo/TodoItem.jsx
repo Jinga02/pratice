@@ -1,7 +1,7 @@
 import React from "react";
 import DeleteTodo from "./DeleteTodo";
-import UpdateTodo from "./UpdateTodo";
 import style from "./style/TodoItem.module.css";
+import UpdateTodo from "./UpdateTodo";
 const TodoItem = ({ todo }) => {
   return (
     <li className={style.todoItemLi}>

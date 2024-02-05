@@ -35,22 +35,22 @@ const TodoProvider = ({ children }) => {
 
   // 다크모드
   const updateDarkMode = (darkMode) => {
-    if (darkMode === true) {
+    if (darkMode === "dark") {
       document.documentElement.classList.add("dark");
-      localStorage.setItem("theme", true);
+      localStorage.setItem("theme", "dark");
     } else {
       document.documentElement.classList.remove("dark");
-      localStorage.setItem("theme", false);
+      localStorage.setItem("theme", "light");
     }
   };
 
   const [darkMode, setDarkMode] = useState(() => {
     const localStorageTheme = localStorage.getItem("theme");
-    return localStorageTheme ? JSON.parse(localStorageTheme) : false;
+    return localStorageTheme === "dark" ? localStorageTheme : "light";
   });
 
   const handleDarkMode = () => {
-    const newDarkMode = !darkMode;
+    const newDarkMode = darkMode === "dark" ? "light" : "dark";
     setDarkMode(newDarkMode);
     updateDarkMode(newDarkMode);
   };

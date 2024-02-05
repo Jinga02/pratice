@@ -3,7 +3,9 @@ import style from "./style/TodoList.module.css";
 import { useSelector } from "react-redux";
 import TodoItem from "./TodoItem";
 import CreateTodo from "./CreateTodo";
-import { TodoContext } from "../../context-api/state";
+import { TodoContext } from "context-api/state";
+// import { TodoContext } from "../../context-api/state";
+// import TodoContext from "component/context-api/TodoContext";
 
 const TodoList = ({ header }) => {
   // context-api
