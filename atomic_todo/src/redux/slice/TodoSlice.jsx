@@ -2,7 +2,10 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
   todos: [],
+  statuses: ["all", "active", "completed"],
+  status: "all",
 };
+// initialState.status = initialState.statuses[0];
 
 const TodoSlice = createSlice({
   name: "todo",
@@ -18,7 +21,6 @@ const TodoSlice = createSlice({
     },
     updateTodo: (state, action) => {
       const { todoId, newStatus } = action.payload;
-      console.log(newStatus);
       const newTodos = state.todos.map((todo) => {
         if (todo.id === todoId) {
           return { ...todo, status: newStatus };
@@ -27,8 +29,13 @@ const TodoSlice = createSlice({
       });
       state.todos = newTodos;
     },
+    selectStatus: (state, action) => {
+      const newStatus = action.payload;
+      state.status = newStatus;
+    },
   },
 });
 
-export const { createTodo, deleteTodo, updateTodo } = TodoSlice.actions;
+export const { createTodo, deleteTodo, updateTodo, selectStatus } =
+  TodoSlice.actions;
 export default TodoSlice;

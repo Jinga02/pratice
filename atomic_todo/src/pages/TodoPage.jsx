@@ -1,10 +1,9 @@
 import React from "react";
-import TodoContent from "../components/organisms/TodoContent";
-
+import Todo from "../components/tempates/Todo";
 const TodoPage = () => {
   return (
     <>
-      <TodoContent />
+      <Todo />
     </>
   );
 };

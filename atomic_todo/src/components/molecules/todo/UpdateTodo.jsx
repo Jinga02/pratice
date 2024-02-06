@@ -8,7 +8,6 @@ const UpdateTodo = ({ todo }) => {
     const newStatus = e.target.checked ? "completed" : "active";
     dispatch(updateTodo({ todoId: todo.id, newStatus }));
   };
-  console.log(todo.status);
   return (
     <input
       type="checkbox"
