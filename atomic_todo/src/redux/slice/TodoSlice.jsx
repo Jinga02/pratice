@@ -5,7 +5,6 @@ const initialState = {
   statuses: ["all", "active", "completed"],
   status: "all",
 };
-// initialState.status = initialState.statuses[0];
 
 const TodoSlice = createSlice({
   name: "todo",

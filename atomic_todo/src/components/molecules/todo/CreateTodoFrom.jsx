@@ -2,7 +2,7 @@ import React from "react";
 import InputTodo from "./InputTodo";
 import AddTodo from "./AddTodo";
 import { v4 as uuidv4 } from "uuid";
-import useInput from "hooks/useInput";
+import useInput from "../../../hooks/useInput";
 import { useDispatch } from "react-redux";
 import { createTodo } from "../../../redux/slice/TodoSlice";
 

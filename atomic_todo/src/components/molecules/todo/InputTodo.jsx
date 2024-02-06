@@ -1,6 +1,5 @@
-import Input from "components/atom/input/Input";
 import React from "react";
-
+import Input from "../../atom/input/Input";
 const InputTodo = ({ todoText, onChangeTodoText }) => {
   return (
     <Input

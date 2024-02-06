@@ -5,7 +5,13 @@ import TodoItem from "./TodoItem";
 const TodoList = () => {
   const todos = useSelector((state) => state.todo.todos);
   const status = useSelector((state) => state.todo.status);
-  const filterTodos = todos.filter((todo) => todo.status !== status);
+  const filterTodos = todos.filter((todo) => {
+    if (status === "all") {
+      return todo;
+    } else {
+      return todo.status === status;
+    }
+  });
 
   return (
     <ul>
