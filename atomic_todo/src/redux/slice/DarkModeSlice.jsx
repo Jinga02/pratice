@@ -1,10 +1,24 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-if (!localStorage.getItem("theme")) {
-  localStorage.setItem("theme", "light");
+// 초기 테마 설정
+let initialTheme;
+if (
+  !localStorage.getItem("theme") ||
+  localStorage.getItem("theme") === "light"
+) {
+  initialTheme = "light";
+} else {
+  initialTheme = "dark";
 }
+localStorage.setItem("theme", initialTheme);
+
+// 다크모드 적용
+if (initialTheme === "dark") {
+  document.documentElement.classList.add("dark");
+}
+
 const initialState = {
-  theme: localStorage.getItem("theme"),
+  theme: initialTheme,
 };
 
 const DarkModeSlice = createSlice({
@@ -15,7 +29,11 @@ const DarkModeSlice = createSlice({
       const newTheme = action.payload;
       localStorage.setItem("theme", newTheme);
       state.theme = newTheme;
-      console.log(newTheme);
+      if (newTheme === "dark") {
+        document.documentElement.classList.add("dark");
+      } else {
+        document.documentElement.classList.remove("dark");
+      }
     },
   },
 });
