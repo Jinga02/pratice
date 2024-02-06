@@ -1,8 +1,8 @@
-import TodoButton from "components/atom/button/TodoButton";
+import Button from "components/atom/button/Button";
 import React from "react";
 
 const AddTodo = ({ onSubmitTodo }) => {
-  return <TodoButton label={"add"} onClick={onSubmitTodo}></TodoButton>;
+  return <Button label={"add"} onClick={onSubmitTodo}></Button>;
 };
 
 export default AddTodo;
