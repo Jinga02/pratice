@@ -12,6 +12,8 @@ function App() {
       document.documentElement.classList.remove("dark");
     }
   }, [theme]);
+
   return <TodoPage />;
 }
+
 export default App;

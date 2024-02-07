@@ -1,12 +1,12 @@
-import React from "react";
-import DeleteTodo from "./DeleteTodo";
-import UpdateTodo from "./UpdateTodo";
+import React from 'react';
+import DeleteTodo from './DeleteTodo';
+import UpdateTodo from './UpdateTodo';
 
 const TodoItem = ({ todo }) => {
   return (
-    <li>
+    <li className='flex justify-between p-5 text-2xl'>
       <UpdateTodo todo={todo} />
-      {todo.text}
+      <p className='px-6'>{todo.text}</p>
       <DeleteTodo todoId={todo.id} />
     </li>
   );

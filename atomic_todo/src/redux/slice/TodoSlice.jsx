@@ -12,13 +12,13 @@ const TodoSlice = createSlice({
   reducers: {
     createTodo: (state, action) => {
       state.todos.push(action.payload);
-      localStorage.setItem("todos", state.todos);
+      localStorage.setItem("todos", JSON.stringify(state.todos));
     },
     deleteTodo: (state, action) => {
       const todoId = action.payload;
       const newTodos = state.todos.filter((todo) => todo.id !== todoId);
       state.todos = newTodos;
-      localStorage.setItem("todos", newTodos);
+      localStorage.setItem("todos", JSON.stringify(newTodos));
     },
     updateTodo: (state, action) => {
       const { todoId, newStatus } = action.payload;
@@ -29,7 +29,7 @@ const TodoSlice = createSlice({
         return todo;
       });
       state.todos = newTodos;
-      localStorage.setItem("todos", newTodos);
+      localStorage.setItem("todos", JSON.stringify(newTodos));
     },
     selectStatus: (state, action) => {
       const newStatus = action.payload;

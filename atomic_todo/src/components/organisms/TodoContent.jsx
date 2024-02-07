@@ -1,12 +1,12 @@
-import React from "react";
-import CreateTodoForm from "../molecules/todo/CreateTodoFrom";
-import TodoList from "../molecules/todo/TodoList";
+import React from 'react';
+import CreateTodo from '../molecules/todo/CreateTodo';
+import TodoList from '../molecules/todo/TodoList';
 
 const TodoContent = () => {
   return (
-    <div>
+    <div className='h-90 w-full bg-white  '>
       <TodoList />
-      <CreateTodoForm />
+      <CreateTodo />
     </div>
   );
 };
