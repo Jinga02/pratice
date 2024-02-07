@@ -7,7 +7,14 @@
   --color-darkAccent: rgba(8, 7, 34, 0.8828125);
   --color-accent: #ff9b17;
 }
-
+html.dark {
+  background: linear-gradient(
+    90deg,
+    rgba(36, 17, 0, 1) 0%,
+    rgba(4, 4, 34, 0.8491990546218487) 0%,
+    rgba(8, 7, 34, 0.8828125) 100%
+  );
+}
 body {
   margin: 0;
   width: 100vw;
