@@ -4,20 +4,29 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  text-transform: capitalize;
+}
+button {
+  text-transform: capitalize;
+  font-weight: bold;
+  color: white;
+  background: none;
+  border: 0;
 }
 .wrapper {
   width: 500px;
   height: 500px;
-}
-.titleWrapper {
-  height: 5%;
-  font-size: 1rem;
-  background-color: gray;
+  background-color: rgba(128, 128, 128, 0.16);
 }
 
 .filterWrapper {
-  height: 5%;
-  background-color: gray;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 10%;
+  background-color: rgba(0, 0, 0, 0.797);
+  color: white;
+  font-weight: bold;
 }
 
 .todoWrapper {
@@ -48,18 +57,32 @@ body {
   list-style: none;
   padding: 1rem 0;
   button {
-    margin: 0 1rem;
     flex-shrink: 0; /* 버튼 요소의 크기 변경 금지 */
     background: transparent;
     border: 0;
+    font-weight: bold;
   }
 }
 
 .formWrapper {
   height: 10%;
-  background-color: gray;
+  background-color: rgba(0, 0, 0, 0.194);
+  display: flex;
+  align-items: center;
 }
-
+#todoForm {
+  width: 94%;
+  padding: 3%;
+  display: flex;
+  input {
+    flex: 1 0 auto;
+  }
+}
+#inputTodoText {
+  padding: 2%;
+}
+#addButton {
+}
 #completed {
   color: gray;
   text-decoration: line-through;

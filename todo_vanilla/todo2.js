@@ -1,4 +1,5 @@
 const inputTodoText = document.getElementById("inputTodoText");
+
 const todoList = document.getElementById("todoList");
 
 let todos = [];
