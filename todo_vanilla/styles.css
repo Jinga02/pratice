@@ -24,11 +24,37 @@ body {
   height: 80%;
   /* background-color: blue; */
   overflow-y: scroll;
+  width: 100%;
 }
+.todoWrapper::-webkit-scrollbar {
+  width: 8px; /* 스크롤바 너비 설정 */
+}
+
+.todoWrapper::-webkit-scrollbar-thumb {
+  background-color: #888; /* 스크롤바 색상 설정 */
+  border-radius: 4px; /* 스크롤바 모서리 둥글게 만들기 */
+}
+
 #todoList {
+  width: 90%;
+  height: 90%;
   margin: 0;
-  padding: 1rem;
+  padding: 5%;
 }
+
+#todoItem {
+  display: flex;
+  justify-content: space-between;
+  list-style: none;
+  padding: 1rem 0;
+  button {
+    margin: 0 1rem;
+    flex-shrink: 0; /* 버튼 요소의 크기 변경 금지 */
+    background: transparent;
+    border: 0;
+  }
+}
+
 .formWrapper {
   height: 10%;
   background-color: gray;
@@ -37,8 +63,4 @@ body {
 #completed {
   color: gray;
   text-decoration: line-through;
-}
-
-li {
-  list-style: none;
 }

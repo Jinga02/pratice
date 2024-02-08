@@ -29,7 +29,7 @@ const renderTodoList = () => {
     // todoItem
     const todoItem = document.createElement("li");
     todoItem.dataset.id = todo.id;
-
+    todoItem.id = "todoItem";
     // todo 내용
     const todoText = document.createElement("span");
     todoText.textContent = todo.text;
@@ -56,9 +56,9 @@ const renderTodoList = () => {
       renderTodoList();
     });
 
+    todoItem.appendChild(updatedButton);
     todoItem.appendChild(todoText);
     todoItem.appendChild(deletedButton);
-    todoItem.appendChild(updatedButton);
     todoList.appendChild(todoItem);
   });
 };
