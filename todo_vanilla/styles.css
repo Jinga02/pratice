@@ -1,0 +1,44 @@
+body {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.wrapper {
+  width: 500px;
+  height: 500px;
+}
+.titleWrapper {
+  height: 5%;
+  font-size: 1rem;
+  background-color: gray;
+}
+
+.filterWrapper {
+  height: 5%;
+  background-color: gray;
+}
+
+.todoWrapper {
+  height: 80%;
+  /* background-color: blue; */
+  overflow-y: scroll;
+}
+#todoList {
+  margin: 0;
+  padding: 1rem;
+}
+.formWrapper {
+  height: 10%;
+  background-color: gray;
+}
+
+#completed {
+  color: gray;
+  text-decoration: line-through;
+}
+
+li {
+  list-style: none;
+}

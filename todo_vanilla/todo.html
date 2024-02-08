@@ -3,25 +3,40 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>To-do List</title>
+    <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <div class="container">
-      <div class="todoHeader">todo-header</div>
-      <div class="todoContent">
+    <div class="wrapper">
+      <div class="titleWrapper">
+        <span>To-do List</span>
+      </div>
+
+      <!-- 할 일 필터 -->
+      <div class="filterWrapper">
+        <button id="allButton">All</button>
+        <button id="completeButton">Complete</button>
+        <button id="activeButton">Active</button>
+        <button id="allDeleteButton">전체삭제</button>
+      </div>
+
+      <!-- 할 일 목록 표시할 UL 요소 -->
+      <div class="todoWrapper">
         <ul id="todoList"></ul>
       </div>
-      <div class="todoAdd">
+
+      <!-- 할 일 입력 폼 -->
+      <div class="formWrapper">
         <form id="todoForm">
           <input
-            id="inputTodoText"
             type="text"
-            placeholder="오늘 할 일을 적어주세요!"
+            id="inputTodoText"
+            placeholder="할 일을 입력하세요"
           />
-          <input id="inputTodoButton" type="submit" value="Add" />
+          <button type="submit">추가</button>
         </form>
       </div>
     </div>
+    <script src="todo2.js"></script>
   </body>
-  <script src="./todo.js"></script>
 </html>
