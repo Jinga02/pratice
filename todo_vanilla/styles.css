@@ -12,11 +12,12 @@ button {
   color: white;
   background: none;
   border: 0;
+  cursor: pointer;
 }
 .wrapper {
   width: 500px;
   height: 500px;
-  background-color: rgba(128, 128, 128, 0.16);
+  /* background-color: rgba(128, 128, 128, 0.728); */
 }
 
 .filterWrapper {
@@ -31,7 +32,6 @@ button {
 
 .todoWrapper {
   height: 80%;
-  /* background-color: blue; */
   overflow-y: scroll;
   width: 100%;
 }
@@ -40,7 +40,7 @@ button {
 }
 
 .todoWrapper::-webkit-scrollbar-thumb {
-  background-color: #888; /* 스크롤바 색상 설정 */
+  background-color: #888;
   border-radius: 4px; /* 스크롤바 모서리 둥글게 만들기 */
 }
 
@@ -61,6 +61,7 @@ button {
     background: transparent;
     border: 0;
     font-weight: bold;
+    color: black;
   }
 }
 
@@ -81,8 +82,7 @@ button {
 #inputTodoText {
   padding: 2%;
 }
-#addButton {
-}
+
 #completed {
   color: gray;
   text-decoration: line-through;

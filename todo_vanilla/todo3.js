@@ -20,7 +20,7 @@ const onRender = () => {
   todos.map((todo) => {
     const todoItem = document.createElement("li");
     todoItem.dataset.id = todo.id;
-
+    todoItem.id = "todoItem";
     const todoText = document.createElement("p");
     todoText.textContent = todo.text;
 
@@ -32,11 +32,17 @@ const onRender = () => {
     });
 
     const updateButton = document.createElement("button");
+    updateButton.addEventListener("click", () => {
+      onUpdateTodo(todo.id);
+      onRender();
+    });
+
     updateButton.textContent = "완료";
     todoItem.appendChild(updateButton);
     todoItem.appendChild(todoText);
     todoItem.appendChild(deleteButton);
     todoList.appendChild(todoItem);
+    console.log(todos);
   });
 };
 // todo 추가
@@ -56,7 +62,14 @@ const onDelete = (id) => {
   todos = todos.filter((todo) => todo.id !== id);
 };
 
-const onUpdateTodo = (id) => {};
+const onUpdateTodo = (id) => {
+  todos = todos.map((todo) => {
+    if (todo.id === id) {
+      return { ...todo, complete: !todo.complete };
+    }
+    return todo;
+  });
+};
 
 createTodo();
 onRender();
