@@ -3,11 +3,13 @@ const inputTodo = document.getElementById("inputTodoText");
 const allButton = document.getElementById("allButton");
 const activeButton = document.getElementById("activeButton");
 const completeButton = document.getElementById("completeButton");
+const allDeleteButton = document.getElementById("allDeleteButton");
 
 // todo를 담을 변수
 let todos = [];
 let id = 0;
 
+// todo 생성
 const createTodo = () => {
   document.getElementById("todoForm").addEventListener("submit", (e) => {
     e.preventDefault();
@@ -17,6 +19,7 @@ const createTodo = () => {
   });
 };
 
+// todo 출력
 const onRender = (filterTodos) => {
   todoList.innerHTML = "";
   filterTodos.map((todo) => {
@@ -47,6 +50,7 @@ const onRender = (filterTodos) => {
     console.log(todos);
   });
 };
+
 // todo 추가
 const onAdd = (todoText) => {
   if (todoText.trim() !== "") {
@@ -59,11 +63,22 @@ const onAdd = (todoText) => {
     alert("할 일을 입력해주세요!");
   }
 };
+
 // todo 삭제
 const onDelete = (id) => {
   todos = todos.filter((todo) => todo.id !== id);
 };
 
+// todo 모두 삭제
+const onAllDelete = () => {
+  todos = [];
+};
+allDeleteButton.addEventListener("click", () => {
+  onAllDelete();
+  onRender(todos);
+});
+
+// todo 상태변경
 const onUpdateTodo = (id) => {
   todos = todos.map((todo) => {
     if (todo.id === id) {
@@ -73,11 +88,13 @@ const onUpdateTodo = (id) => {
   });
 };
 
+// 모든 todo
 const onFilterAll = () => {
   onRender(todos);
 };
 allButton.addEventListener("click", onFilterAll);
 
+// 완료 된 todo
 const onFilterComplete = () => {
   const completeTodos = todos.filter((todo) => {
     return todo.complete === true;
@@ -87,6 +104,7 @@ const onFilterComplete = () => {
 };
 completeButton.addEventListener("click", onFilterComplete);
 
+// 진행 중 todo
 const onFilterActive = () => {
   const activeTodos = todos.filter((todo) => {
     return todo.complete === false;
