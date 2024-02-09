@@ -1,5 +1,8 @@
 const todoList = document.getElementById("todoList");
 const inputTodo = document.getElementById("inputTodoText");
+const allButton = document.getElementById("allButton");
+const activeButton = document.getElementById("activeButton");
+const completeButton = document.getElementById("completeButton");
 
 // todo를 담을 변수
 let todos = [];
@@ -10,14 +13,13 @@ const createTodo = () => {
     e.preventDefault();
     onAdd(inputTodo.value);
     inputTodo.value = "";
-    console.log(todos);
-    onRender();
+    onRender(todos);
   });
 };
 
-const onRender = () => {
+const onRender = (filterTodos) => {
   todoList.innerHTML = "";
-  todos.map((todo) => {
+  filterTodos.map((todo) => {
     const todoItem = document.createElement("li");
     todoItem.dataset.id = todo.id;
     todoItem.id = "todoItem";
@@ -28,13 +30,13 @@ const onRender = () => {
     deleteButton.textContent = "삭제";
     deleteButton.addEventListener("click", () => {
       onDelete(todo.id);
-      onRender();
+      onRender(todos);
     });
 
     const updateButton = document.createElement("button");
     updateButton.addEventListener("click", () => {
       onUpdateTodo(todo.id);
-      onRender();
+      onRender(todos);
     });
 
     updateButton.textContent = "완료";
@@ -71,5 +73,27 @@ const onUpdateTodo = (id) => {
   });
 };
 
+const onFilterAll = () => {
+  onRender(todos);
+};
+allButton.addEventListener("click", onFilterAll);
+
+const onFilterComplete = () => {
+  const completeTodos = todos.filter((todo) => {
+    return todo.complete === true;
+  });
+  console.log(completeTodos);
+  onRender(completeTodos);
+};
+completeButton.addEventListener("click", onFilterComplete);
+
+const onFilterActive = () => {
+  const activeTodos = todos.filter((todo) => {
+    return todo.complete === false;
+  });
+  onRender(activeTodos);
+};
+activeButton.addEventListener("click", onFilterActive);
+
 createTodo();
-onRender();
+onRender(todos);
