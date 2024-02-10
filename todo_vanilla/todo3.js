@@ -41,8 +41,12 @@ const onRender = (filterTodos) => {
       onUpdateTodo(todo.id);
       onRender(todos);
     });
+    if (todo.complete) {
+      updateButton.textContent = "완료";
+    } else {
+      updateButton.textContent = "진행 중";
+    }
 
-    updateButton.textContent = "완료";
     todoItem.appendChild(updateButton);
     todoItem.appendChild(todoText);
     todoItem.appendChild(deleteButton);
