@@ -1,0 +1,57 @@
+body {
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(128, 128, 128, 0.273);
+  padding: 0;
+  margin: 0;
+}
+
+#wrap {
+  width: 960px;
+  margin: 0 auto;
+}
+header {
+  width: 100%;
+  height: 100px;
+  background-color: red;
+}
+aside {
+  float: left;
+  width: 20%;
+  height: 600px;
+  background-color: rgba(255, 0, 0, 0.8);
+}
+section {
+  float: left;
+  width: 80%;
+  height: 600px;
+  background-color: rgba(255, 0, 0, 0.6);
+}
+footer {
+  clear: both;
+  width: 100%;
+  height: 100px;
+  background-color: rgba(255, 0, 0, 0.4);
+}
+
+@media (max-width: 768px) {
+  #wrap {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  #wrap {
+    width: 100%;
+  }
+  aside {
+    width: 100%;
+    height: 300px;
+    float: none;
+  }
+  section {
+    width: 100%;
+    height: 300px;
+    float: none;
+  }
+}
