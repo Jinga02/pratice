@@ -1,37 +1,80 @@
 body {
   width: 100vw;
   height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  padding: 0;
+  margin: 0;
 }
-#wrap {
-  width: 500px;
-  height: 500px;
-  background-color: rgba(198, 198, 198, 0.123);
-}
+
 header {
-  height: 15%;
+  height: 5%;
+  width: 98%;
+  background-color: #2564cf;
+  display: flex;
+  /* justify-content: center; */
+  align-items: center;
+  color: white;
+  padding: 0 1%;
+}
+aside {
+  float: left;
+  width: 20%;
+  height: 90%;
+  border-right: 0.5px solid rgb(0, 0, 0, 0.1);
+}
+section {
+  float: left;
+  width: 79%;
+  height: 90%;
+  /* background: rgb(0, 0, 0, 0.3); */
+}
+footer {
+  width: 100%;
+  height: 5%;
+  background-color: #2564cf;
+  clear: both;
 }
 .darkMode {
   margin: 1rem 25%;
   font-size: 1.5rem;
 }
 .filter {
-  margin: 1rem 25%;
+  height: 5%;
+  padding: 0 3rem;
   button {
+    /* color: rgb(0, 0, 0, 0.3); */
     background: transparent;
     border: 0;
-    font-size: 1.5rem;
+    /* font-size: 1rem; */
   }
 }
-section {
-  width: 100%;
-  height: 85%;
+
+.inputWrap {
+  height: 5%;
+  form {
+    display: flex;
+    justify-content: center;
+  }
+  input {
+    padding: 1rem;
+    flex: 0.8 0 auto;
+    border: 0;
+    /* box-shadow: 5px 5px 10px gray; */
+    outline: none;
+  }
+  input::placeholder {
+    font-size: 1rem;
+    font-weight: bold;
+    /* font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif; */
+  }
+  button {
+    border: 0;
+    /* box-shadow: 5px 5px 10px gray; */
+    /* box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22); */
+  }
 }
+
 .todoWrap {
   height: 90%;
-  /* background-color: red; */
   overflow-y: scroll;
   ul {
     margin: 0;
@@ -50,15 +93,12 @@ section {
     margin: 10px;
   }
 }
-.inputWrap {
-  height: 10%;
 
-  form {
-    display: flex;
-    margin: 1rem;
-  }
-  input {
-    padding: 0.5rem;
-    flex: 1 0 auto;
-  }
+.todoWrap::-webkit-scrollbar {
+  display: none;
 }
+
+/* .todoWrap::-webkit-scrollbar-thumb {
+  background-color: #888;
+  border-radius: 4px;
+} */

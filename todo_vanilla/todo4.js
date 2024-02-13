@@ -29,6 +29,7 @@ const onDeleteTodo = (id) => {
   todos = todos.filter((todo) => {
     return todo.id !== id;
   });
+  onRender(todos);
 };
 
 const onUpdateTodo = (id) => {
@@ -38,6 +39,7 @@ const onUpdateTodo = (id) => {
     }
     return todo;
   });
+  onRender(todos);
 };
 
 const showAllTodo = () => {
@@ -69,23 +71,20 @@ const onRender = (todos) => {
   todoList.innerHTML = "";
   todos.map((todo) => {
     const todoItem = document.createElement("li");
-
     todoItem.dataset.id = todo.id;
 
     const todoText = document.createElement("p");
     todoText.textContent = todo.text;
 
     const updateButton = document.createElement("button");
-    updateButton.textContent = "완료";
+    updateButton.textContent = todo.complete ? "미완료" : "완료";
     updateButton.addEventListener("click", () => {
       onUpdateTodo(todo.id);
-      onRender(todos);
     });
     const deleteButton = document.createElement("button");
     deleteButton.textContent = "삭제";
     deleteButton.addEventListener("click", () => {
       onDeleteTodo(todo.id);
-      onRender(todos);
     });
 
     todoList.appendChild(todoItem);
@@ -96,3 +95,4 @@ const onRender = (todos) => {
 };
 
 onAddTodo();
+onRender();

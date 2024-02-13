@@ -7,25 +7,23 @@
     <link rel="stylesheet" href="./todo4.css" />
   </head>
   <body>
-    <div id="wrap">
-      <header>
-        <div class="darkMode">Todo_List</div>
-        <div class="filter">
-          <button id="all">all</button>
-          <button id="active">active</button>
-          <button id="complete">complete</button>
-        </div>
-      </header>
-      <section>
-        <div class="todoWrap"><ul></ul></div>
-        <div class="inputWrap">
-          <form>
-            <input type="text" name="" id="" />
-            <button>입력</button>
-          </form>
-        </div>
-      </section>
-    </div>
+    <header>Todo_List</header>
+    <aside>메뉴</aside>
+    <section>
+      <div class="filter">
+        <button id="all">모든 할 일</button>
+        <button id="active">진행 중 인 할 일</button>
+        <button id="complete">완료된 할 일</button>
+      </div>
+      <div class="inputWrap">
+        <form>
+          <input type="text" placeholder="오늘 할 일을 적어주세요" />
+          <button>입력</button>
+        </form>
+      </div>
+      <div class="todoWrap"><ul></ul></div>
+    </section>
+    <footer></footer>
     <script src="./todo4.js"></script>
   </body>
 </html>
