@@ -1,0 +1,191 @@
+body {
+  width: 100vw;
+  height: 100vh;
+  padding: 0;
+  margin: 0;
+}
+button {
+  background: transparent;
+  border: 0;
+  text-transform: capitalize;
+}
+
+header {
+  height: 5%;
+  width: 98%;
+  background-color: #2564cf;
+  display: flex;
+  align-items: center;
+  color: white;
+  padding: 0 1%;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+aside {
+  float: left;
+  width: 18%;
+  height: 90%;
+  border-right: 0.5px solid rgb(0, 0, 0, 0.1);
+  padding: 0 1%;
+}
+.menu {
+  height: 25%;
+  margin-bottom: 1rem;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: flex-start;
+
+  button {
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: bold;
+  }
+
+  img {
+    width: 1rem;
+    margin-right: 1rem;
+  }
+}
+section {
+  float: left;
+  width: 79%;
+  height: 90%;
+}
+
+.inputWrap {
+  height: 5%;
+  form {
+    display: flex;
+    justify-content: center;
+     */
+  }
+  input {
+    padding: 1rem 0;
+    margin-top: 1rem;
+    flex: 0.8 0 auto;
+    border: 0;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.201);
+    outline: none;
+  }
+  input::placeholder {
+    font-size: 1rem;
+    font-weight: bold;
+  }
+  button {
+    border: 0;
+    cursor: pointer;
+  }
+}
+
+.todoWrap {
+  height: 90%;
+  overflow-y: scroll;
+  ul {
+    margin: 0;
+    padding: 1rem;
+  }
+  button {
+    margin: 10px;
+    cursor: pointer;
+  }
+}
+
+#todoItem {
+  display: flex;
+  justify-content: space-between;
+  list-style: none;
+  width: 100%;
+  margin: 0.5rem 0;
+  box-shadow: 3px 3px 3px rgba(128, 128, 128, 0.244);
+}
+#todoDetailWrap {
+  width: 30%;
+  height: 40%;
+  background-color: white;
+  position: absolute;
+  top: 10%;
+  left: 65%;
+  z-index: 1;
+  box-shadow: 0 0 10px gray;
+  border-radius: 10px;
+  padding: 1% 2%;
+  overflow-y: scroll;
+}
+#todoDetailWrap::-webkit-scrollbar {
+  display: none;
+}
+#detailCloseButton {
+  cursor: pointer;
+  padding: 1rem;
+  float: right;
+}
+#detailCloseImg {
+  width: 1.5rem;
+}
+#detailUl {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  li {
+    list-style: none;
+    margin: 1rem 0;
+    img {
+      width: 1rem;
+    }
+  }
+}
+#imgWrap {
+  li {
+    display: flex;
+    img {
+      width: 1.5rem;
+    }
+    span {
+      font-size: 1rem;
+      font-weight: bold;
+      margin-left: 1rem;
+      mar
+    }
+  }
+}
+#textLi{
+  font-size: 1.2rem;
+  font-weight: bold;
+  line-height: 2;
+}
+#deleteButton{
+  cursor: pointer;  
+  position:absolute;
+  top:16%;
+  right: 7.5%;
+  img{
+    width: 1.5rem;
+  }
+}
+#todoItem {
+  width: 100%;
+}
+#todoText {
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 1rem;
+}
+#updateCheckBox {
+  width: 1rem;
+}
+#importantButton {
+  width: 1.5rem;
+}
+
+.todoWrap::-webkit-scrollbar {
+  display: none;
+}
+
+footer {
+  width: 100%;
+  height: 5%;
+  background-color: #2564cf;
+  clear: both;
+}

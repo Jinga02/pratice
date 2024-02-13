@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./style/todo.css" />
+  </head>
+  <body>
+    <header>Todo_List</header>
+    <aside>
+      <div class="menu">
+        <button id="all">all</button>
+        <button id="important">
+          <img src="./asset/star.png" alt="" />important
+        </button>
+        <button id="active">
+          <img src="./asset//circle.png" alt="" />active
+        </button>
+        <button id="complete">
+          <img src="./asset/check.png" alt="" />complete
+        </button>
+      </div>
+      <div class="todoList">
+        <button>+ 새 목록</button>
+      </div>
+    </aside>
+    <section>
+      <div class="inputWrap">
+        <form>
+          <input type="text" placeholder="Add Todo..." />
+        </form>
+      </div>
+      <div class="todoWrap"><ul></ul></div>
+    </section>
+    <footer></footer>
+    <script src="./js/todo.js"></script>
+  </body>
+</html>
