@@ -144,9 +144,6 @@ section {
     align-items: center;
     margin-bottom: 0.5rem;
   }
-  img{
-    width: 1.5rem;
-  }
   #activeButton::after {
     margin-left: 1rem;
     font-size: 1rem;
@@ -165,12 +162,14 @@ section {
     font-weight: bold;
     content: "Normal";
   }
-
   #importantButton::after {
     margin-left: 1rem;
     font-size: 1rem;
     font-weight: bold;
     content: "Important";
+  }
+  img{
+    width: 1.5rem;
   }
 }
 
