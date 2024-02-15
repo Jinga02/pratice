@@ -1,5 +1,5 @@
-import createTodo from "./module/todo/todoItem/createTodo.js";
-import todoRender from "./module/todo/todoRender.js";
+import createTodo from "./src/module/todo/todoItem/CreateTodo.js";
+import todoRender from "./src/module/todo/TodoRender.js";
 const all = document.getElementById("all"); // 모든 todo 보기 버튼
 const active = document.getElementById("active"); // 진행 중인 todo 보기 버튼
 const complete = document.getElementById("complete"); // 완료된 todo 보기 버튼

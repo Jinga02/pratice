@@ -3,7 +3,7 @@ const change = (img, button, todo) => {
   button.id = todo.complete ? "completeButton" : "activeButton";
 };
 
-const updateTodo = (todo, todoRender, todos) => {
+const UpdateTodo = (todo, todos, TodoRender) => {
   const updateButton = document.createElement("button");
 
   const updateImg = document.createElement("img");
@@ -17,8 +17,8 @@ const updateTodo = (todo, todoRender, todos) => {
   updateButton.addEventListener("click", () => {
     todo.complete = !todo.complete;
     change(updateImg, updateButton, todo);
-    todoRender(todos);
+    TodoRender(todos);
   });
   return updateButton;
 };
-export default updateTodo;
+export default UpdateTodo;

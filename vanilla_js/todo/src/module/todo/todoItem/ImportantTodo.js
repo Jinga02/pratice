@@ -3,9 +3,8 @@ const change = (img, button, todo) => {
   button.id = todo.important ? "importantButton" : "normalButton";
 };
 
-const importantTodo = (todo, todoRender, todos) => {
+const ImportantTodo = (todo, todos, TodoRender) => {
   const importantButton = document.createElement("button");
-
   const importantImg = document.createElement("img");
   importantImg.id = "importantImg";
   importantImg.alt = "star";
@@ -16,10 +15,10 @@ const importantTodo = (todo, todoRender, todos) => {
 
   importantButton.addEventListener("click", () => {
     todo.important = !todo.important;
-    change(importantButton, importantImg, todo);
-    todoRender(todos);
+    change(importantImg, importantButton, todo);
+    TodoRender(todos);
   });
   return importantButton;
 };
 
-export default importantTodo;
+export default ImportantTodo;

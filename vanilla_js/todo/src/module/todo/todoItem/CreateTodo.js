@@ -1,7 +1,7 @@
 const todoForm = document.getElementById("todoFrom");
 const todoInput = document.getElementById("todoInput");
 
-export default function createTodo(todos, onRender) {
+const CreateTodo = (todos, onRender) => {
   // 새로운 todo의 고유 ID 생성
   let id = todos.length > 0 ? todos[todos.length - 1].id + 1 : 0;
 
@@ -21,4 +21,6 @@ export default function createTodo(todos, onRender) {
     todoInput.value = "";
     onRender(todos);
   });
-}
+};
+
+export default CreateTodo;

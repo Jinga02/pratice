@@ -143,6 +143,7 @@ section {
     display: flex;
     align-items: center;
     margin-bottom: 0.5rem;
+    cursor:pointer
   }
   #activeButton::after {
     margin-left: 1rem;

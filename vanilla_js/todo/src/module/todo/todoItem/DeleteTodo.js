@@ -1,4 +1,4 @@
-const deleteTodo = (deleteTodo, todoRender, todos) => {
+const DeleteTodo = (deleteTodo, todoRender, todos) => {
   const deleteButton = document.createElement("button");
   const deleteImg = document.createElement("img");
   deleteImg.src = "./asset/trash.png";
@@ -13,4 +13,4 @@ const deleteTodo = (deleteTodo, todoRender, todos) => {
   return deleteButton;
 };
 
-export default deleteTodo;
+export default DeleteTodo;
