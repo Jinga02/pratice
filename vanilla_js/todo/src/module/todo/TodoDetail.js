@@ -3,14 +3,14 @@ import ImportantTodo from "./todoItem/ImportantTodo.js";
 import { createTodoText } from "./todoItem/TodoItem.js";
 import UpdateTodo from "./todoItem/UpdateTodo.js";
 
-const TodoDetail = (todo, todos, TodoRender) => {
+const TodoDetail = (todo, todos, TodoList) => {
   const todoDetailWrap = createEl.createTodoDetailWrap();
   const detailTodoText = createTodoText(todo);
   const detailImgWrap = createEl.createDetailImgWrap();
   const detailCloseButton = createEl.createDetailCloseButton();
-  const detailUpdateButton = UpdateTodo(todo, todos, TodoRender);
-  const detailImportantButton = ImportantTodo(todo, todos, TodoRender);
-  const deleteButton = DeleteTodo(todo, TodoRender, todos);
+  const detailUpdateButton = UpdateTodo(todo, todos, TodoList);
+  const detailImportantButton = ImportantTodo(todo, todos, TodoList);
+  const deleteButton = DeleteTodo(todo, todos, TodoList);
 
   detailImgWrap.appendChild(detailUpdateButton);
   detailImgWrap.appendChild(detailImportantButton);
@@ -48,4 +48,3 @@ const createEl = {
     return detailImgWrap;
   },
 };
-// export default TodoDetail;

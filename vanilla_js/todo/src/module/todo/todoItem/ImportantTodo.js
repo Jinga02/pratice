@@ -3,7 +3,7 @@ const change = (img, button, todo) => {
   button.id = todo.important ? "importantButton" : "normalButton";
 };
 
-const ImportantTodo = (todo, todos, TodoRender) => {
+const ImportantTodo = (todo, todos, TodoList) => {
   const importantButton = document.createElement("button");
   const importantImg = document.createElement("img");
   importantImg.id = "importantImg";
@@ -16,7 +16,7 @@ const ImportantTodo = (todo, todos, TodoRender) => {
   importantButton.addEventListener("click", () => {
     todo.important = !todo.important;
     change(importantImg, importantButton, todo);
-    TodoRender(todos);
+    TodoList(todos);
   });
   return importantButton;
 };

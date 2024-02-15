@@ -7,6 +7,7 @@ const createTodoItem = (todo) => {
   todoItem.id = "todoItem";
   return todoItem;
 };
+
 export const createTodoText = (todo) => {
   const todoText = document.createElement("p");
   todoText.textContent =
@@ -15,11 +16,11 @@ export const createTodoText = (todo) => {
   return todoText;
 };
 
-const TodoItem = (todo, todos, TodoRender) => {
+const TodoItem = (todo, todos, TodoList) => {
   const todoItem = createTodoItem(todo);
   const todoText = createTodoText(todo);
-  const updateButton = UpdateTodo(todo, todos, TodoRender);
-  const importantButton = ImportantTodo(todo, todos, TodoRender);
+  const updateButton = UpdateTodo(todo, todos, TodoList);
+  const importantButton = ImportantTodo(todo, todos, TodoList);
 
   todoItem.appendChild(updateButton);
   todoItem.appendChild(todoText);

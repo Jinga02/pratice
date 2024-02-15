@@ -4,15 +4,15 @@ import TodoItem from "./todoItem/TodoItem.js";
 const section = document.querySelector("section"); // todo 상세 정보를 표시할 섹션
 const todoList = document.querySelector("ul"); // todo 목록
 
-const TodoRender = (todos) => {
+const TodoList = (todos) => {
   todoList.innerHTML = "";
 
   todos.forEach((todo) => {
-    const { todoItem, todoText } = TodoItem(todo, todos, TodoRender);
+    const { todoItem, todoText } = TodoItem(todo, todos, TodoList);
     const { todoDetailWrap, detailCloseButton, deleteButton } = TodoDetail(
       todo,
       todos,
-      TodoRender
+      TodoList
     );
 
     todoText.addEventListener("click", () => {
@@ -36,4 +36,4 @@ const TodoRender = (todos) => {
   localStorage.setItem("todos", JSON.stringify(todos));
 };
 
-export default TodoRender;
+export default TodoList;

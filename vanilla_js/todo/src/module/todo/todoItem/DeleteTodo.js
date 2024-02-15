@@ -1,4 +1,4 @@
-const DeleteTodo = (deleteTodo, todoRender, todos) => {
+const DeleteTodo = (deleteTodo, todos, TodoList) => {
   const deleteButton = document.createElement("button");
   const deleteImg = document.createElement("img");
   deleteImg.src = "./asset/trash.png";
@@ -8,8 +8,10 @@ const DeleteTodo = (deleteTodo, todoRender, todos) => {
     todos = todos.filter((todo) => {
       return todo.id !== deleteTodo.id;
     });
-    todoRender(todos);
+    TodoList(todos);
   });
+  localStorage.setItem("todos", JSON.stringify(todos));
+
   return deleteButton;
 };
 

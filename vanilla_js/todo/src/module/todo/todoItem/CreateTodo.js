@@ -1,7 +1,7 @@
 const todoForm = document.getElementById("todoFrom");
 const todoInput = document.getElementById("todoInput");
 
-const CreateTodo = (todos, onRender) => {
+const CreateTodo = (todos, TodoList) => {
   // 새로운 todo의 고유 ID 생성
   let id = todos.length > 0 ? todos[todos.length - 1].id + 1 : 0;
 
@@ -19,7 +19,7 @@ const CreateTodo = (todos, onRender) => {
     };
     todos.push(todo);
     todoInput.value = "";
-    onRender(todos);
+    TodoList(todos);
   });
 };
 
