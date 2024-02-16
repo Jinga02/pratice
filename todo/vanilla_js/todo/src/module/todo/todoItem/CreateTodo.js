@@ -1,4 +1,4 @@
-const todoForm = document.getElementById("todoFrom");
+const todoForm = document.getElementById("todoForm");
 const todoInput = document.getElementById("todoInput");
 
 const CreateTodo = (todos, TodoList) => {

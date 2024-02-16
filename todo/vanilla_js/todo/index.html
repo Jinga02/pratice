@@ -2,6 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=chroem" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <link rel="stylesheet" href="./style/todo.css" />
@@ -21,17 +22,14 @@
           <img src="./asset/check.png" alt="" />complete
         </button>
       </div>
-      <div class="todoList">
-        <button>+ 새 목록</button>
-      </div>
     </aside>
     <section>
       <div class="inputWrap">
-        <form id="todoFrom">
+        <form id="todoForm">
           <input id="todoInput" type="text" placeholder="Add Todo..." />
         </form>
       </div>
-      <div class="todoWrap"><ul></ul></div>
+      <div class="todoWrap"><ul id="todoList"></ul></div>
     </section>
     <footer></footer>
     <script src="./Main.js" type="module"></script>
