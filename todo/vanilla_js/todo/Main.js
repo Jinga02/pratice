@@ -1,10 +1,11 @@
+import DeleteAllTodo from "./src/module/todo/menu/DeleteAllTodo.js";
 import createTodo from "./src/module/todo/todoItem/CreateTodo.js";
 import TodoList from "./src/module/todo/TodoList.js";
+
 const allButton = document.getElementById("all");
 const importantButton = document.getElementById("important");
 const activeButton = document.getElementById("active");
 const completeButton = document.getElementById("complete");
-
 let todos = []; // todo 목록을 저장할 배열
 
 // 로컬 스토리지에서 저장된 todo 목록 불러오기
@@ -36,3 +37,4 @@ completeButton.addEventListener("click", () => {
 });
 createTodo(todos, TodoList); // todo 추가 기능 호출
 TodoList(todos); // 초기 렌더링 시 todo 목록 출력
+DeleteAllTodo(todos, TodoList);
