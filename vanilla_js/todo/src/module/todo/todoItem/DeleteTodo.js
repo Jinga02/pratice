@@ -5,12 +5,16 @@ const DeleteTodo = (deleteTodo, todos, TodoList) => {
   deleteButton.appendChild(deleteImg);
   deleteButton.id = "deleteButton";
   deleteButton.addEventListener("click", () => {
-    todos = todos.filter((todo) => {
-      return todo.id !== deleteTodo.id;
-    });
-    TodoList(todos);
+    const answer = confirm("정말 끝내셨습니까?");
+    if (answer) {
+      todos = todos.filter((todo) => {
+        return todo.id !== deleteTodo.id;
+      });
+      localStorage.setItem("todos", JSON.stringify(todos));
+      TodoList(todos);
+      window.location.reload();
+    }
   });
-  localStorage.setItem("todos", JSON.stringify(todos));
 
   return deleteButton;
 };

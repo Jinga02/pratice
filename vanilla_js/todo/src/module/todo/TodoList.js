@@ -1,10 +1,11 @@
 import TodoDetail from "./TodoDetail.js";
+
 import TodoItem from "./todoItem/TodoItem.js";
 
 const section = document.querySelector("section"); // todo 상세 정보를 표시할 섹션
 const todoList = document.querySelector("ul"); // todo 목록
 
-const TodoList = (todos) => {
+const TodoList = (todos, no) => {
   todoList.innerHTML = "";
 
   todos.forEach((todo) => {

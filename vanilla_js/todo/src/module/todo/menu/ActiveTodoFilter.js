@@ -1,4 +1,4 @@
-const ActiveTodoFilter = () => {
+const ActiveTodoFilter = (todos, TodoList) => {
   const active = document.getElementById("active"); // 진행 중인 todo 보기 버튼
 
   // 진행 중인 todo 보기 기능

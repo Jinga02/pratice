@@ -1,5 +1,5 @@
 // 모든 todo 보기 기능
-const AllTodoFilter = () => {
+const AllTodoFilter = (todos, TodoList) => {
   const all = document.getElementById("all"); // 모든 todo 보기 버튼
 
   const showAllTodo = () => {
