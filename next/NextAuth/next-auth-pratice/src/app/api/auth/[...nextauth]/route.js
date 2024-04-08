@@ -65,17 +65,17 @@ const handler = NextAuth({
   // 콜백 함수 설정
   callbacks: {
     // 리다이렉트 콜백 함수
-    redirect({ url, baseUrl }) {
+    async redirect({ url, baseUrl }) {
       console.log("redirect callback called");
       return baseUrl;
     },
     // // JWT 생성 콜백 함수
-    jwt({ token, account, profile }) {
+    async jwt({ token, account, profile }) {
       console.log("redirect JWT called");
       return token;
     },
     // 세션 생성 콜백 함수
-    session({ session, user, token }) {
+    async session({ session, user, token }) {
       console.log("redirect session called");
       return session;
     },

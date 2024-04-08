@@ -1,8 +1,12 @@
 "use client";
 
+import { getServerSession } from "next-auth";
 import { signIn } from "next-auth/react";
 
-export default function Login() {
+export default async function Login({ session }) {
+  // const session = await getServerSession(req, res, authOptions);
+  // console.log(session);
+  console.log(session);
   return (
     <>
       <h1>로그인 페이지</h1>
